@@ -7,38 +7,38 @@ window.onload = function() {
 
     document.addEventListener('keypress', (event) => {
         switch (event.key) {
-            case 's':
+            case 'd':
                 video.play();
                 break;
-            case 'p':
+            case 'a':
                 video.pause();
                 break;
-            case 'a':
-                video.volume = 0;
-                break;
-            case 'e':
-                video.volume = 1;
-                break;
-            case 'l':
+            case 'w':
                 if (video.volume < 1)
                     video.volume = video.volume + volumeDiff;
                 break;
-            case 'j':
+            case 's':
                 if (video.volume > 0)
                     video.volume = video.volume - volumeDiff;
                 break;
-            case 'i':
+            case 'e':
                 if (video.volume < 1)
                     video.volume = video.volume + volumeDiff * 10;
                 break;
-            case 'k':
+            case 'q':
                 if (video.volume > 0)
                     video.volume = video.volume - volumeDiff * 10;
                 break;
-            case 'w':
+            case 'z':
+                video.volume = 0;
+                break;
+            case 'c':
+                video.volume = 1;
+                break;
+            case 'r':
                 backGround.setAttribute('class', 'back-ground-white');
                 break;
-            case 'b':
+            case 'f':
                 backGround.setAttribute('class', 'back-ground-black');
                 break;
             default:
