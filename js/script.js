@@ -3,7 +3,7 @@ const volumeDiff = 0.01;
 window.onload = function() {
     const backGround = document.getElementById('back-ground');
     const video = document.getElementById('video');
-    video.volume = 0.05;
+    video.volume = 0.5;
 
     document.addEventListener('keypress', (event) => {
         switch (event.key) {
