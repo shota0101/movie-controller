@@ -1,11 +1,13 @@
 #!/bin/bash
 
 cd "${HOME}/private/git/movie-controller"
+mkdir -p ./movies/list/1
+mkdir -p ./movies/current
 
-files="./movies/*.mp4"
+files="./movies/list/1/*.mp4"
 for filePath in ${files}; do
     echo "${filePath}"
-    mv "${filePath}" movie.mp4
+    mv "${filePath}" ./movies/current/movie1.mp4
     break
 done
 
