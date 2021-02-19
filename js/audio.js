@@ -1,15 +1,17 @@
 const volumeDiff = 0.01;
+let resumeKey = 'resumeKey';
 
 function save() {
-  const audio = document.getElementById('audio');
-  if (audio.currentTime !== 0)
-    localStorage.setItem('audio-resume', audio.currentTime);
+  const media = document.getElementById('media');
+  if (media.currentTime !== 0)
+    localStorage.setItem(resumeKey, media.currentTime);
 }
 
 window.onload = function() {
   const backGround = document.getElementById('back-ground');
-  const audio = document.getElementById('audio');
-  audio.volume = 0.5;
+  const media = document.getElementById('media');
+  resumeKey = document.getElementById('resume_key').value;
+  media.volume = document.getElementById('volume').value;
   window.setInterval(save, 1000 * 10); // 10秒ごとに保存
   
   document.addEventListener('keypress', (event) => {
@@ -18,51 +20,55 @@ window.onload = function() {
       // レジューム関連
     case 'c':
       save();
-      alert(audio.currentTime / 60);
+      alert(media.currentTime / 60);
       break;
     case 'r':
-      audio.currentTime = localStorage.getItem('movie-resume');
+      media.currentTime = localStorage.getItem(resumeKey);
       break;
 
       // 停止・再生
     case 's':
-      audio.play();
+      media.play();
       break;
     case 'd':
-      audio.pause();
+      media.pause();
       save();
       break;
 
       // 早送り
     case 'f':
-      audio.currentTime = audio.currentTime + 10;
+      media.currentTime = media.currentTime + 10;
       break;
     case 'b':
-      audio.currentTime = audio.currentTime - 10;
+      media.currentTime = media.currentTime - 10;
       break;
 
       // 音量系
     case 'p':
-      if (audio.volume < 1)
-        audio.volume = audio.volume + volumeDiff;
+      if (media.volume < 1)
+        media.volume = media.volume + volumeDiff;
+      console.log('volume : ' + media.volume);
       break;
     case 'n':
-      if (audio.volume > 0)
-        audio.volume = audio.volume - volumeDiff;
+      if (media.volume > 0)
+        media.volume = media.volume - volumeDiff;
+      console.log('volume : ' + media.volume);
       break;
     case 'P':
-      if (audio.volume < 1)
-        audio.volume = audio.volume + volumeDiff * 10;
+      if (media.volume < 1)
+        media.volume = media.volume + volumeDiff * 10;
+      console.log('volume : ' + media.volume);
       break;
     case 'N':
-      if (audio.volume > 0)
-        audio.volume = audio.volume - volumeDiff * 10;
+      if (media.volume > 0)
+        media.volume = media.volume - volumeDiff * 10;
+      console.log('volume : ' + media.volume);
       break;
     case 'a':
-      audio.volume = 0;
+      media.volume = 0;
       break;
     case 'e':
-      audio.volume = 1;
+      media.volume = 1;
       break;
       
     // case 'w':
