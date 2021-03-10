@@ -42,6 +42,66 @@ window.onload = function() {
     case 'b':
       media.currentTime = media.currentTime - 10;
       break;
+    case 'q':
+      media.currentTime = media.currentTime + 1;
+      break;
+    case 'Q':
+      media.currentTime = media.currentTime - 1;
+      break;
+    case 'w':
+      media.currentTime = media.currentTime + 2;
+      break;
+    case 'W':
+      media.currentTime = media.currentTime - 2;
+      break;
+    case 'e':
+      media.currentTime = media.currentTime + 4;
+      break;
+    case 'E':
+      media.currentTime = media.currentTime - 4;
+      break;
+    case 'r':
+      media.currentTime = media.currentTime + 8;
+      break;
+    case 'R':
+      media.currentTime = media.currentTime - 8;
+      break;
+    case 't':
+      media.currentTime = media.currentTime + 16;
+      break;
+    case 'T':
+      media.currentTime = media.currentTime - 16;
+      break;
+    case 'y':
+      media.currentTime = media.currentTime + 32;
+      break;
+    case 'Y':
+      media.currentTime = media.currentTime - 32;
+      break;
+    case 'u':
+      media.currentTime = media.currentTime + 64;
+      break;
+    case 'U':
+      media.currentTime = media.currentTime - 64;
+      break;
+    case 'i':
+      media.currentTime = media.currentTime + 128;
+      break;
+    case 'I':
+      media.currentTime = media.currentTime - 128;
+      break;
+    case 'o':
+      media.currentTime = media.currentTime + 256;
+      break;
+    case 'O':
+      media.currentTime = media.currentTime - 256;
+      break;
+    case 'p':
+      media.currentTime = media.currentTime + 512;
+      break;
+    case 'P':
+      media.currentTime = media.currentTime - 512;
+      break;
 
       // 音量系
     case 'p':
