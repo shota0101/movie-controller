@@ -36,71 +36,71 @@ window.onload = function() {
       break;
 
       // 早送り
-    case 'f':
-      media.currentTime = media.currentTime + 10;
-      break;
     case 'b':
-      media.currentTime = media.currentTime - 10;
+      media.currentTime = media.currentTime - 3;
       break;
-    case 'q':
-      media.currentTime = media.currentTime + 1;
+    case 'f':
+      media.currentTime = media.currentTime + 3;
       break;
-    case 'Q':
+    case '1':
       media.currentTime = media.currentTime - 1;
       break;
-    case 'w':
-      media.currentTime = media.currentTime + 2;
+    case '!':
+      media.currentTime = media.currentTime + 1;
       break;
-    case 'W':
-      media.currentTime = media.currentTime - 2;
+    case '2':
+      media.currentTime = media.currentTime - 10;
       break;
-    case 'e':
-      media.currentTime = media.currentTime + 4;
+    case '@':
+      media.currentTime = media.currentTime + 10;
       break;
-    case 'E':
-      media.currentTime = media.currentTime - 4;
+    case '3':
+      media.currentTime = media.currentTime - 30;
       break;
-    case 'r':
-      media.currentTime = media.currentTime + 8;
+    case '#':
+      media.currentTime = media.currentTime + 30;
       break;
-    case 'R':
-      media.currentTime = media.currentTime - 8;
+    case '4':
+      media.currentTime = media.currentTime - 40;
       break;
-    case 't':
-      media.currentTime = media.currentTime + 16;
+    case '$':
+      media.currentTime = media.currentTime + 40;
       break;
-    case 'T':
-      media.currentTime = media.currentTime - 16;
+    case '5':
+      media.currentTime = media.currentTime - 50;
       break;
-    case 'y':
-      media.currentTime = media.currentTime + 32;
+    case '%':
+      media.currentTime = media.currentTime + 50;
       break;
-    case 'Y':
-      media.currentTime = media.currentTime - 32;
+    case '6':
+      media.currentTime = media.currentTime - 60;
       break;
-    case 'u':
-      media.currentTime = media.currentTime + 64;
+    case '^':
+      media.currentTime = media.currentTime + 60;
       break;
-    case 'U':
-      media.currentTime = media.currentTime - 64;
+    case '7':
+      media.currentTime = media.currentTime - 180;
       break;
-    case 'i':
-      media.currentTime = media.currentTime + 128;
+    case '&':
+      media.currentTime = media.currentTime + 180;
       break;
-    case 'I':
-      media.currentTime = media.currentTime - 128;
+    case '8':
+      media.currentTime = media.currentTime - 300;
       break;
-    case 'o':
-      media.currentTime = media.currentTime + 256;
+    case '*':
+      media.currentTime = media.currentTime + 300;
       break;
-    case 'O':
-      media.currentTime = media.currentTime - 256;
+    case '9':
+      media.currentTime = media.currentTime - 600;
       break;
-    case 'p':
-      media.currentTime = media.currentTime + 512;
+    case '(':
+      media.currentTime = media.currentTime + 600;
       break;
-    case 'P':
-      media.currentTime = media.currentTime - 512;
+    case '0':
+      media.currentTime = media.currentTime - 1800;
+      break;
+    case ')':
+      media.currentTime = media.currentTime + 1800;
       break;
 
       // 音量系
