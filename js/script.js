@@ -38,12 +38,18 @@ window.onload = function() {
 
       // 停止・再生
     case ' ':
-    case 'w': // Heliumだと何故かSpaceが効かなかったりするので
       if (isPlaying === false) {
 	media.play();
       } else {
 	media.pause();
       }
+      break;
+      // Heliumだと何故かSpaceが効かなかったりするので
+    case 'q':
+      media.pause();
+      break;
+    case 'w':
+      media.play();
       break;
 
       // 音量系
