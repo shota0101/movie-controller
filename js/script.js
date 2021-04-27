@@ -44,6 +44,32 @@ window.onload = function() {
       }
       break;
 
+      // 音量系
+    case '}':
+      if (media.volume < 1)
+        media.volume = media.volume + volumeDiff;
+      console.log('volume : ' + media.volume);
+      break;
+    case '{':
+      if (media.volume > 0)
+        media.volume = media.volume - volumeDiff;
+      console.log('volume : ' + media.volume);
+      break;
+    case ']':
+      if (media.volume < 1)
+        media.volume = media.volume + volumeDiff * 10;
+      console.log('volume : ' + media.volume);
+      break;
+    case '[':
+      if (media.volume > 0)
+        media.volume = media.volume - volumeDiff * 10;
+      console.log('volume : ' + media.volume);
+      break;
+    case '<':
+      media.volume = 0;
+      break;
+    case '>':
+      media.volume = 1;
       break;
 
       // 早送り
@@ -114,34 +140,6 @@ window.onload = function() {
       media.currentTime = media.currentTime + 1800;
       break;
 
-      // 音量系
-    case 'p':
-      if (media.volume < 1)
-        media.volume = media.volume + volumeDiff;
-      console.log('volume : ' + media.volume);
-      break;
-    case 'n':
-      if (media.volume > 0)
-        media.volume = media.volume - volumeDiff;
-      console.log('volume : ' + media.volume);
-      break;
-    case 'P':
-      if (media.volume < 1)
-        media.volume = media.volume + volumeDiff * 10;
-      console.log('volume : ' + media.volume);
-      break;
-    case 'N':
-      if (media.volume > 0)
-        media.volume = media.volume - volumeDiff * 10;
-      console.log('volume : ' + media.volume);
-      break;
-    case 'a':
-      media.volume = 0;
-      break;
-    case 'e':
-      media.volume = 1;
-      break;
-      
     // case 'w':
     //   backGround.setAttribute('class', 'back-ground-white');
     //   break;
