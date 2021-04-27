@@ -32,11 +32,13 @@ window.onload = function() {
       alert(media.currentTime / 60);
       break;
     case 'Enter':
+    case 'r':
       media.currentTime = localStorage.getItem(resumeKey);
       break;
 
       // 停止・再生
     case ' ':
+    case 'w': // Heliumだと何故かSpaceが効かなかったりするので
       if (isPlaying === false) {
 	media.play();
       } else {
