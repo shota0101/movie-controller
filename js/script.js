@@ -47,24 +47,28 @@ window.onload = function() {
       break;
 
       // 音量系
-    case '}':
-      if (media.volume < 1)
-        media.volume = media.volume + volumeDiff;
+    case 'y':
+    case '[':
+      if (media.volume > 0)
+        media.volume = media.volume - volumeDiff * 10;
       console.log('volume : ' + media.volume);
       break;
+    case 'u':
     case '{':
       if (media.volume > 0)
         media.volume = media.volume - volumeDiff;
       console.log('volume : ' + media.volume);
       break;
+    case 'i':
+    case '}':
+      if (media.volume < 1)
+        media.volume = media.volume + volumeDiff;
+      console.log('volume : ' + media.volume);
+      break;
+    case 'o':
     case ']':
       if (media.volume < 1)
         media.volume = media.volume + volumeDiff * 10;
-      console.log('volume : ' + media.volume);
-      break;
-    case '[':
-      if (media.volume > 0)
-        media.volume = media.volume - volumeDiff * 10;
       console.log('volume : ' + media.volume);
       break;
     case '<':
