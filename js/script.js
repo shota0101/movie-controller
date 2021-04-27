@@ -27,11 +27,11 @@ window.onload = function() {
     switch (event.key) {
 
       // レジューム関連
-    case 'c':
+    case '`':
       save();
       alert(media.currentTime / 60);
       break;
-    case 'r':
+    case 'Enter':
       media.currentTime = localStorage.getItem(resumeKey);
       break;
 
