@@ -72,6 +72,13 @@ window.onload = function() {
       media.volume = 1;
       break;
 
+      // case 'w':
+      //   backGround.setAttribute('class', 'back-ground-white');
+      //   break;
+      // case 'q':
+      //   backGround.setAttribute('class', 'back-ground-black');
+      //   break;
+
       // 早送り
     case 'b':
       media.currentTime = media.currentTime - 3;
@@ -140,12 +147,6 @@ window.onload = function() {
       media.currentTime = media.currentTime + 1800;
       break;
 
-    // case 'w':
-    //   backGround.setAttribute('class', 'back-ground-white');
-    //   break;
-    // case 'q':
-    //   backGround.setAttribute('class', 'back-ground-black');
-    //   break;
     default:
       console.log(`keypress:${event.key}`);
       break;
