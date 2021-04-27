@@ -10,6 +10,15 @@ function save() {
 window.onload = function() {
   const backGround = document.getElementById('back-ground');
   const media = document.getElementById('media');
+  let isPlaying = false;
+
+  media.onplaying = function() {
+    isPlaying = true;
+  };
+  media.onpause = function() {
+    isPlaying = false;
+  };
+  
   resumeKey = document.getElementById('resume_key').value;
   media.volume = document.getElementById('volume').value;
   window.setInterval(save, 1000 * 10); // 10秒ごとに保存
@@ -27,12 +36,14 @@ window.onload = function() {
       break;
 
       // 停止・再生
-    case 's':
-      media.play();
+    case ' ':
+      if (isPlaying === false) {
+	media.play();
+      } else {
+	media.pause();
+      }
       break;
-    case 'd':
-      media.pause();
-      save();
+
       break;
 
       // 早送り
