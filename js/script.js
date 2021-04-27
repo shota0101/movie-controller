@@ -79,72 +79,55 @@ window.onload = function() {
       //   backGround.setAttribute('class', 'back-ground-black');
       //   break;
 
-      // 早送り
-    case 'b':
-      media.currentTime = media.currentTime - 3;
-      break;
-    case 'f':
-      media.currentTime = media.currentTime + 3;
-      break;
-    case '1':
-      media.currentTime = media.currentTime - 1;
-      break;
-    case '!':
-      media.currentTime = media.currentTime + 1;
-      break;
-    case '2':
-      media.currentTime = media.currentTime - 10;
-      break;
-    case '@':
-      media.currentTime = media.currentTime + 10;
-      break;
-    case '3':
-      media.currentTime = media.currentTime - 30;
-      break;
-    case '#':
-      media.currentTime = media.currentTime + 30;
-      break;
-    case '4':
-      media.currentTime = media.currentTime - 40;
-      break;
-    case '$':
-      media.currentTime = media.currentTime + 40;
-      break;
-    case '5':
-      media.currentTime = media.currentTime - 50;
-      break;
-    case '%':
-      media.currentTime = media.currentTime + 50;
-      break;
-    case '6':
+      // 時刻移動系
+    case 'a':
       media.currentTime = media.currentTime - 60;
       break;
-    case '^':
+    case 's':
+      media.currentTime = media.currentTime - 30;
+      break;
+    case 'd':
+      media.currentTime = media.currentTime - 10;
+      break;
+    case 'f':
+      media.currentTime = media.currentTime - 3;
+      break;
+    case 'g':
+      media.currentTime = media.currentTime - 1;
+      break;
+    case 'h':
+      media.currentTime = media.currentTime + 1;
+      break;
+    case 'j':
+      media.currentTime = media.currentTime + 3;
+      break;
+    case 'k':
+      media.currentTime = media.currentTime + 10;
+      break;
+    case 'l':
+      media.currentTime = media.currentTime + 30;
+      break;
+    case ';':
       media.currentTime = media.currentTime + 60;
       break;
-    case '7':
-      media.currentTime = media.currentTime - 180;
+
+    case 'x':
+      media.currentTime = media.currentTime - 60 * 30;
       break;
-    case '&':
-      media.currentTime = media.currentTime + 180;
+    case 'c':
+      media.currentTime = media.currentTime - 60 * 10;
       break;
-    case '8':
-      media.currentTime = media.currentTime - 300;
+    case 'v':
+      media.currentTime = media.currentTime - 60 * 3;
       break;
-    case '*':
-      media.currentTime = media.currentTime + 300;
+    case 'b':
+      media.currentTime = media.currentTime + 60 * 3;
       break;
-    case '9':
-      media.currentTime = media.currentTime - 600;
+    case 'n':
+      media.currentTime = media.currentTime + 60 * 10;
       break;
-    case '(':
-      media.currentTime = media.currentTime + 600;
-      break;
-    case '0':
-      media.currentTime = media.currentTime - 1800;
-      break;
-    case ')':
-      media.currentTime = media.currentTime + 1800;
+    case 'm':
+      media.currentTime = media.currentTime + 60 * 30;
       break;
 
     default:
