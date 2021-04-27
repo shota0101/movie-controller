@@ -21,7 +21,7 @@ window.onload = function() {
   
   resumeKey = document.getElementById('resume_key').value;
   media.volume = document.getElementById('volume').value;
-  window.setInterval(save, 1000 * 10); // 10秒ごとに保存
+  window.setInterval(save, 1000 * 60); // 1分ごとに保存
   
   document.addEventListener('keypress', (event) => {
     switch (event.key) {
