@@ -1,7 +1,9 @@
-body.back-ground-black {
-    background-color:black
+body {
+    background-color: black;
 }
 
-body.back-ground-white {
-    background-color:white
+video {
+    width: 100%;
+    height: 100%;
 }
+
