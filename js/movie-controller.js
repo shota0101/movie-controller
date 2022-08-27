@@ -41,12 +41,12 @@ window.onload = function() {
     // keypressだと方向キーが取得できないためkeydownを利用
     switch (event.code) {
 
-    case 'Enter': // 停止・再生
-      // Spaceはvideo要素本来の機能と衝突するので不要
-      if (isPlaying === false)
-	video.play();
-      else
+    case 'KeyP': // 停止・再生
+      // SpaceやEnterはvideo要素本来の機能と衝突するので不要
+      if (isPlaying === true)
 	video.pause();
+      else
+	video.play();
       break;
 
     case 'ArrowUp': // 音量
