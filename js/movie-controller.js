@@ -37,27 +37,15 @@ window.onload = function() {
     isPlaying = false;
   };
   
-  document.addEventListener('keydown', (event) => {
-    // keypressだと方向キーが取得できないためkeydownを利用
+  // keydownだと⌘Lのような修飾キーを利用したキー入力に反応するのでkeypressを利用
+  document.addEventListener('keypress', (event) => {
     switch (event.code) {
-
     case 'KeyP': // 停止・再生
       // SpaceやEnterはvideo要素本来の機能と衝突するので不要
       if (isPlaying === true)
 	video.pause();
       else
 	video.play();
-      break;
-
-    case 'ArrowUp': // 音量
-      if (video.volume < 1)
-        video.volume = video.volume + volumeUnit;
-      console.log('volume : ' + video.volume);
-      break;
-    case 'ArrowDown':
-      if (video.volume > 0)
-        video.volume = video.volume - volumeUnit;
-      console.log('volume : ' + video.volume);
       break;
 
     case 'KeyT': // 時刻をtempに記録
@@ -100,5 +88,27 @@ window.onload = function() {
       break;
     };
   });
+
+  // keypressだと方向キーが取得できないためkeydownを利用
+  document.addEventListener('keydown', (event) => {
+    switch (event.code) {
+
+    case 'ArrowUp': // 音量
+      if (video.volume < 1)
+        video.volume = video.volume + volumeUnit;
+      console.log('volume : ' + video.volume);
+      break;
+    case 'ArrowDown':
+      if (video.volume > 0)
+        video.volume = video.volume - volumeUnit;
+      console.log('volume : ' + video.volume);
+      break;
+
+    default:
+      console.log(`keydown : ${event.code}`);
+      break;
+    };
+  });
+
 };  
 
