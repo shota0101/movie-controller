@@ -22,6 +22,7 @@ video {
 #hyoko {
     width: 100%; /* ウィンドウサイズ-動画の横幅になるように */
 
-    /* TODO: 柔軟に下寄せできるように修正 */
-    padding-top: 390px;
+    /* 画面下寄せするため */
+    height: 35vh;
+    padding-top: 60vh;
 }
