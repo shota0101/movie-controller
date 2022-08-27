@@ -1,9 +1,27 @@
 body {
-    background-color: black;
+    font-family:'メイリオ', 'Meiryo', sans-serif;
+    display:flex; /* 子要素横並び */
+
+    /* ウィンドウサイズの95% */
+    width: 95vw;
+    height: 95vh;
 }
 
 video {
-    width: 100%;
     height: 100%;
 }
 
+#left {
+    height: 100%;
+}
+
+#right {
+    height: 100%;
+}
+
+#hyoko {
+    width: 100%; /* ウィンドウサイズ-動画の横幅になるように */
+
+    /* TODO: 柔軟に下寄せできるように修正 */
+    padding-top: 390px;
+}

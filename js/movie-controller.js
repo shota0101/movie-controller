@@ -21,7 +21,7 @@ window.onload = function() {
   const sourceElement = document.createElement('source');
   sourceElement.setAttribute('src', filePath);
   video.appendChild(sourceElement);
-  document.getElementById('main').appendChild(video);
+  document.getElementById('left').appendChild(video);
 
   // 続きのデータがあれば、続きからの位置で初期化
   resumeKey = filePath;
