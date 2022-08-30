@@ -50,7 +50,7 @@ window.onload = function() {
 
     case 'KeyT': // 時刻をtempに記録
       localStorage.setItem('temp', video.currentTime);
-      alert(`yキーで${Math.round(video.currentTime)}秒に戻ります`);
+      alert(`rキーで${Math.round(video.currentTime)}秒に戻ります`);
       console.log(`keypress : ${event.code}`);
       break;
     case 'KeyR': // 時刻をtempに移動
