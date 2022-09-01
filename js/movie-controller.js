@@ -12,7 +12,7 @@ window.onload = function() {
   const filePath = new URLSearchParams(window.location.search.substring(1)).get('path');
 
   // ↓のようなHTMLを追加する
-  // <video id='video' width='100%' height='100%' controls>
+  // <video id='video' controls>
   //   <source src='パラメータで指定された動画ファイルパス'>
   // </video>
   const video = document.createElement('video');
