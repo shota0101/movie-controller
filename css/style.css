@@ -17,6 +17,7 @@ video {
 
 #right {
     height: 100%;
+    max-width: 180px;
 }
 
 #hyoko {
