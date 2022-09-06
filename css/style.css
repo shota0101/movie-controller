@@ -27,3 +27,11 @@ video {
     /* 画面下寄せするため */
     padding-top: 60vh;
 }
+
+#copy {
+    /* 要素が見えないように */
+    position: absolute;
+    top: -100px;
+    left: -100px;
+}
+

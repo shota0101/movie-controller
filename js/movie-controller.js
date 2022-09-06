@@ -92,6 +92,13 @@ window.onload = function() {
   // keypressだと方向キーが取得できないためkeydownを利用
   document.addEventListener('keydown', (event) => {
     switch (event.code) {
+    case 'Backspace': // 削除用のコマンドをコピー
+      const textarea = document.querySelector('#copy');
+      textarea.textContent = `rm ~/Documents/movie-controller/${filePath}`;
+      textarea.select();
+      document.execCommand('copy');
+      alert(filePath);
+      break;
 
     case 'ArrowUp': // 音量
       if (video.volume < 1)
