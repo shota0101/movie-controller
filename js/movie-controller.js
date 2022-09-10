@@ -7,6 +7,14 @@ function save(name) {
     localStorage.setItem(resumeKey, video.currentTime);
 }
 
+function copy(text) {
+  const textarea = document.querySelector('#copy');
+  textarea.textContent = text;
+  textarea.select();
+  document.execCommand('copy');
+  alert(text);
+}
+
 window.onload = function() {
   // ファイルパスを取得
   const filePath = new URLSearchParams(window.location.search.substring(1)).get('path');
@@ -83,6 +91,9 @@ window.onload = function() {
       break;
       // 十字キーの→←は15秒+-する（video要素の機能）
 
+    case 'KeyC': // ファイルの先頭9文字をコピー
+      copy(filePath.substr(0, 9));
+      break;
     default:
       console.log(`keypress : ${event.code}`);
       break;
@@ -93,11 +104,7 @@ window.onload = function() {
   document.addEventListener('keydown', (event) => {
     switch (event.code) {
     case 'Backspace': // 削除用のコマンドをコピー
-      const textarea = document.querySelector('#copy');
-      textarea.textContent = `rm ~/Documents/movie-controller/${filePath}`;
-      textarea.select();
-      document.execCommand('copy');
-      alert(filePath);
+      copy(`rm ~/Documents/movie-controller/${filePath.substr(0, 10)}`);
       break;
 
     case 'ArrowUp': // 音量
