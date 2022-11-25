@@ -19,6 +19,8 @@ window.onload = function() {
   // ファイルパスを取得
   const filePath = new URLSearchParams(window.location.search.substring(1)).get('path');
 
+  document.title = filePath;
+
   // ↓のようなHTMLを追加する
   // <video id='video' controls>
   //   <source src='パラメータで指定された動画ファイルパス'>
