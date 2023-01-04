@@ -106,7 +106,7 @@ window.onload = function() {
   document.addEventListener('keydown', (event) => {
     switch (event.code) {
     case 'Backspace': // 削除用のコマンドをコピー
-      copy(`rm ~/Documents/movie-controller/${filePath.substr(0, 10)}`);
+      copy(`rm /Volumes/GoogleDrive/My\\ Drive/air/movie-controller/${filePath.substr(0, 10)}`);
       break;
 
     case 'ArrowUp': // 音量
