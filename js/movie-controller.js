@@ -33,6 +33,8 @@ window.onload = function() {
   video.appendChild(sourceElement);
   document.getElementById('left').appendChild(video);
 
+  video.volume = 0.7; // 音量の初期化
+
   // 続きのデータがあれば、続きからの位置で初期化
   resumeKey = filePath;
   if (localStorage.getItem(resumeKey) !== null)
