@@ -15,6 +15,11 @@ function copy(text) {
   alert(text);
 }
 
+// 表示上有効桁数以下を切り捨てる
+function displayVolume(video) {
+  document.getElementById('volume').innerHTML = Math.round(video.volume * 10) / 10;
+}
+
 window.onload = function() {
   // ファイルパスを取得
   const filePath = new URLSearchParams(window.location.search.substring(1)).get('path');
@@ -122,12 +127,12 @@ window.onload = function() {
     case 'ArrowUp': // 音量
       if (video.volume < 1)
         video.volume = video.volume + volumeUnit;
-      document.getElementById('volume').innerHTML = video.volume;
+      displayVolume(video);
       break;
     case 'ArrowDown':
       if (video.volume > 0)
         video.volume = video.volume - volumeUnit;
-      document.getElementById('volume').innerHTML = video.volume;
+      displayVolume(video);
       break;
 
     case 'ArrowLeft': // 再生速度
