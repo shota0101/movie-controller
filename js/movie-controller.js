@@ -99,6 +99,10 @@ window.onload = function() {
       break;
       // 十字キーの→←は15秒+-する（video要素の機能）
 
+    case 'KeyZ': // 全画面
+      video.webkitRequestFullScreen();
+      break;
+
     case 'KeyC': // ファイルの先頭9文字をコピー
       copy(filePath.substr(0, 9));
       break;
