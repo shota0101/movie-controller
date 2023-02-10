@@ -34,6 +34,8 @@ window.onload = function() {
   document.getElementById('left').appendChild(video);
 
   video.volume = 0.7; // 音量の初期化
+  document.getElementById('volume').innerHTML = video.volume;
+  
   video.playbackRate = 1.25; // 再生スピードの初期化
   document.getElementById('speed').innerHTML = video.playbackRate;
 
@@ -116,12 +118,12 @@ window.onload = function() {
     case 'ArrowUp': // 音量
       if (video.volume < 1)
         video.volume = video.volume + volumeUnit;
-      console.log('volume : ' + video.volume);
+      document.getElementById('volume').innerHTML = video.volume;
       break;
     case 'ArrowDown':
       if (video.volume > 0)
         video.volume = video.volume - volumeUnit;
-      console.log('volume : ' + video.volume);
+      document.getElementById('volume').innerHTML = video.volume;
       break;
 
     case 'ArrowLeft': // 再生速度

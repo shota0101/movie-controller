@@ -1,18 +1,4 @@
 <!DOCTYPE html>
-<!-- 【操作方法】 -->
-<!-- p : 再生・一時停止 -->
-<!-- ↑ : +音量 -->
-<!-- ↓ : -音量 -->
-<!-- a : -60秒 -->
-<!-- s : -10秒 -->
-<!-- d : -3秒 -->
-<!-- f : -1秒 -->
-<!-- j : +1秒 -->
-<!-- k : +3秒 -->
-<!-- l : +10秒 -->
-<!-- ; : +60秒 -->
-<!-- t : 現在の時刻を記録 -->
-<!-- r : 記録した時刻に移動 -->
 <html>
   <head>
     <title>movie-controller</title>
@@ -24,6 +10,14 @@
     <div id='left'></div>
     <div id='right'>
       <p>speed : <span id='speed'></span></p>
+      <p>volume : <span id='volume'></span></p>
+      <p>[p] stop, start </p>
+      <p>[↑][↓] volume+-1 </p>
+      <p>[→][←] speed+-1 </p>
+      <p>[asdf] -60,10,3,1秒 </p>
+      <p>[;lkj] +60,10,3,1秒 </p>
+      <p>[t] : 時刻を記録 </p>
+      <p>[r] : tの時刻に移動 </p>
       <img id='hyoko' src="./img/hyoko.png" alt="ひょこ画像" />
       <textarea id='copy'></textarea>
     </div>
