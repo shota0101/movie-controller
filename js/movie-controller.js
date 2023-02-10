@@ -34,6 +34,7 @@ window.onload = function() {
   document.getElementById('left').appendChild(video);
 
   video.volume = 0.7; // 音量の初期化
+  video.playbackRate = 1.25; // 再生スピードの初期化
 
   // 続きのデータがあれば、続きからの位置で初期化
   resumeKey = filePath;
@@ -120,6 +121,13 @@ window.onload = function() {
       if (video.volume > 0)
         video.volume = video.volume - volumeUnit;
       console.log('volume : ' + video.volume);
+      break;
+
+    case 'ArrowLeft': // 再生速度
+      video.playbackRate-=0.25;
+      break;
+    case 'ArrowRight':
+      video.playbackRate+=0.25;
       break;
 
     default:
