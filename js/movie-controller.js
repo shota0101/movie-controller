@@ -38,7 +38,7 @@ window.onload = function() {
   video.appendChild(sourceElement);
   document.getElementById('left').appendChild(video);
 
-  video.volume = 0.7; // 音量の初期化
+  video.volume = 0.5; // 音量の初期化
   document.getElementById('volume').innerHTML = video.volume;
   
   video.playbackRate = 1.25; // 再生スピードの初期化
