@@ -35,6 +35,7 @@ window.onload = function() {
 
   video.volume = 0.7; // 音量の初期化
   video.playbackRate = 1.25; // 再生スピードの初期化
+  document.getElementById('speed').innerHTML = video.playbackRate;
 
   // 続きのデータがあれば、続きからの位置で初期化
   resumeKey = filePath;
@@ -125,9 +126,11 @@ window.onload = function() {
 
     case 'ArrowLeft': // 再生速度
       video.playbackRate-=0.25;
+      document.getElementById('speed').innerHTML = video.playbackRate;
       break;
     case 'ArrowRight':
       video.playbackRate+=0.25;
+      document.getElementById('speed').innerHTML = video.playbackRate;
       break;
 
     default:
