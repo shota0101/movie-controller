@@ -105,7 +105,17 @@ window.onload = function() {
       // 十字キーの→←は15秒+-する（video要素の機能）
 
     case 'KeyZ': // 全画面
-      video.webkitRequestFullScreen();
+      if (!!video.requestFullScreen) {
+	video.requestFullScreen();
+      } else if (!!video.webkitRequestFullScreen) {
+	video.webkitRequestFullScreen();
+      } else if (!!video.webkitEnterFullscreen) {
+	video.webkitEnterFullscreen();
+      }else if (!!video.mozRequestFullScreen) {
+	video.mozRequestFullScreen();
+      }else if (!!video.msRequestFullscreen) {
+	video.msRequestFullscreen();
+      }
       break;
 
     case 'KeyC': // ファイルの先頭9文字をコピー
