@@ -61,12 +61,8 @@ window.onload = function() {
   // keydownだと⌘Lのような修飾キーを利用したキー入力に反応するのでkeypressを利用
   document.addEventListener('keypress', (event) => {
     switch (event.code) {
-    case 'KeyP': // 停止・再生
-      // SpaceやEnterはvideo要素本来の機能と衝突するので不要
-      if (isPlaying === true)
-	video.pause();
-      else
-	video.play();
+    case 'KeyE': // 削除用のコマンドをコピー
+      copy(`rm /Volumes/GoogleDrive/My\\ Drive/air/movie-controller/${filePath.substr(0, 10)}`);
       break;
 
     case 'KeyT': // 時刻をtempに記録
@@ -130,8 +126,12 @@ window.onload = function() {
   // keypressだと方向キーが取得できないためkeydownを利用
   document.addEventListener('keydown', (event) => {
     switch (event.code) {
-    case 'Backspace': // 削除用のコマンドをコピー
-      copy(`rm /Volumes/GoogleDrive/My\\ Drive/air/movie-controller/${filePath.substr(0, 10)}`);
+    case 'Backspace': // 一時停止
+      // SpaceやEnterはvideo要素本来の機能と衝突する
+      if (isPlaying === true)
+	video.pause();
+      else
+	video.play();
       break;
 
     case 'ArrowUp': // 音量
