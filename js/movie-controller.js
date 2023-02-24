@@ -145,11 +145,12 @@ window.onload = function() {
       displayVolume(video);
       break;
 
-    case 'ArrowLeft': // 再生速度
+    // ArrowLeftとArrowRightは動画の時刻変更と干渉
+    case 'BracketLeft': // 再生速度
       video.playbackRate-=0.25;
       document.getElementById('speed').innerHTML = video.playbackRate;
       break;
-    case 'ArrowRight':
+    case 'BracketRight':
       video.playbackRate+=0.25;
       document.getElementById('speed').innerHTML = video.playbackRate;
       break;
