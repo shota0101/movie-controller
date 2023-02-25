@@ -146,11 +146,12 @@ window.onload = function() {
       break;
 
     // ArrowLeftとArrowRightは動画の時刻変更と干渉
-    case 'BracketLeft': // 再生速度
+    // BracketLeftとBracketRightはタブ切り替えと干渉
+    case 'Comma': // 再生速度
       video.playbackRate-=0.25;
       document.getElementById('speed').innerHTML = video.playbackRate;
       break;
-    case 'BracketRight':
+    case 'Period':
       video.playbackRate+=0.25;
       document.getElementById('speed').innerHTML = video.playbackRate;
       break;
