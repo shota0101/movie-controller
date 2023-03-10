@@ -126,7 +126,10 @@ window.onload = function() {
   // keypressだと方向キーが取得できないためkeydownを利用
   document.addEventListener('keydown', (event) => {
     switch (event.code) {
-    case 'Backspace': // 一時停止
+    // 一時停止
+    case 'Backspace':
+    case 'Space':
+    case 'Enter':
       // SpaceやEnterはvideo要素本来の機能と衝突する
       if (isPlaying === true)
 	video.pause();
