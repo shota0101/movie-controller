@@ -48,7 +48,7 @@ window.onload = function() {
   resumeKey = filePath;
   if (localStorage.getItem(resumeKey) !== null)
     video.currentTime = localStorage.getItem(resumeKey);
-  window.setInterval(save, 1000 * 3); // 3分ごとに保存
+  window.setInterval(save, 1000 * 3); // 3秒ごとに保存
 
   let isPlaying = false;
   video.onplaying = function() {
