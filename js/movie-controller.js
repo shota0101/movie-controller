@@ -1,5 +1,7 @@
 const volumeUnit = 0.1;
 let resumeKey = 'resumeKey';
+let resumeKeyVolume = 'before_initialization';
+let resumeKeyPlaybackRate = 'before_initialization';
 
 function save(name) {
   const video = document.getElementById('video');
@@ -20,6 +22,16 @@ function displayVolume(video) {
   document.getElementById('volume').innerHTML = Math.round(video.volume * 10) / 10;
 }
 
+function onVolumeChanged(video) {
+  displayVolume(video);
+  localStorage.setItem(resumeKeyVolume, video.volume);
+}
+
+function onPlaybackRateChanged(video) {
+  document.getElementById('speed').innerHTML = video.playbackRate;
+  localStorage.setItem(resumeKeyPlaybackRate, video.playbackRate);
+}
+
 window.onload = function() {
   // ファイルパスを取得
   const filePath = new URLSearchParams(window.location.search.substring(1)).get('path');
@@ -38,14 +50,23 @@ window.onload = function() {
   video.appendChild(sourceElement);
   document.getElementById('left').appendChild(video);
 
+  resumeKey = filePath; // 前回再生時の情報取得・記録ためのキー
+
   video.volume = 0.5; // 音量の初期化
-  document.getElementById('volume').innerHTML = video.volume;
+  resumeKeyVolume = `${resumeKey}_volume`;
+  const resumeVolume = localStorage.getItem(resumeKeyVolume);
+  if (resumeVolume !== null)
+    video.volume = resumeVolume;
+  displayVolume(video);
   
   video.playbackRate = 1.25; // 再生スピードの初期化
+  resumeKeyPlaybackRate = `${resumeKey}_playbackRate`;
+  const resumePlaybackRate = localStorage.getItem(resumeKeyPlaybackRate);
+  if (resumePlaybackRate !== null)
+    video.playbackRate = resumePlaybackRate;
   document.getElementById('speed').innerHTML = video.playbackRate;
 
   // 続きのデータがあれば、続きからの位置で初期化
-  resumeKey = filePath;
   if (localStorage.getItem(resumeKey) !== null)
     video.currentTime = localStorage.getItem(resumeKey);
   window.setInterval(save, 1000 * 3); // 3秒ごとに保存
@@ -140,23 +161,23 @@ window.onload = function() {
     case 'ArrowUp': // 音量
       if (video.volume < 1)
         video.volume = video.volume + volumeUnit;
-      displayVolume(video);
+      onVolumeChanged(video);
       break;
     case 'ArrowDown':
       if (video.volume > 0)
         video.volume = video.volume - volumeUnit;
-      displayVolume(video);
+      onVolumeChanged(video);
       break;
 
     // ArrowLeftとArrowRightは動画の時刻変更と干渉
     // BracketLeftとBracketRightはタブ切り替えと干渉
     case 'Comma': // 再生速度
       video.playbackRate-=0.25;
-      document.getElementById('speed').innerHTML = video.playbackRate;
+      onPlaybackRateChanged(video);
       break;
     case 'Period':
       video.playbackRate+=0.25;
-      document.getElementById('speed').innerHTML = video.playbackRate;
+      onPlaybackRateChanged(video);
       break;
 
     default:
