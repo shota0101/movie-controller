@@ -1,5 +1,5 @@
 const volumeUnit = 0.1;
-let resumeKey = 'resumeKey';
+let resumeKey = 'before_initialization';
 let resumeKeyVolume = 'before_initialization';
 let resumeKeyPlaybackRate = 'before_initialization';
 
@@ -51,7 +51,11 @@ window.onload = function() {
   document.getElementById('left').appendChild(video);
 
   resumeKey = filePath; // 前回再生時の情報取得・記録ためのキー
-
+  // 続きのデータがあれば、続きからの位置で初期化
+  if (localStorage.getItem(resumeKey) !== null)
+    video.currentTime = localStorage.getItem(resumeKey);
+  window.setInterval(save, 1000 * 3); // 3秒ごとに保存
+  
   video.volume = 0.5; // 音量の初期化
   resumeKeyVolume = `${resumeKey}_volume`;
   const resumeVolume = localStorage.getItem(resumeKeyVolume);
@@ -65,11 +69,6 @@ window.onload = function() {
   if (resumePlaybackRate !== null)
     video.playbackRate = resumePlaybackRate;
   document.getElementById('speed').innerHTML = video.playbackRate;
-
-  // 続きのデータがあれば、続きからの位置で初期化
-  if (localStorage.getItem(resumeKey) !== null)
-    video.currentTime = localStorage.getItem(resumeKey);
-  window.setInterval(save, 1000 * 3); // 3秒ごとに保存
 
   let isPlaying = false;
   video.onplaying = function() {
