@@ -1,4 +1,5 @@
 const volumeUnit = 0.1;
+const prefixDigit = 'Digit';
 let resumeKey = 'before_initialization';
 let resumeKeyVolume = 'before_initialization';
 let resumeKeyPlaybackRate = 'before_initialization';
@@ -152,8 +153,17 @@ window.onload = function() {
     case 'KeyC': // ファイルの先頭9文字をコピー
       copy(filePath.substr(0, 9));
       break;
+
     default:
-      console.log(`keypress : ${event.code}`);
+      
+      if (event.code.indexOf(prefixDigit) === 0) {
+	// 動画の 0～90% の位置に移動
+	const number = parseInt(event.code.replace(prefixDigit, ''));
+	video.currentTime = video.duration * number * 0.1;
+      } else {
+	console.log(`keypress : ${event.code}`);
+      }
+
       break;
     };
   });
