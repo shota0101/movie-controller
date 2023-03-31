@@ -15,6 +15,19 @@ p {
     padding-left: 5px;
 }
 
+/* 【<table>: 表要素 - HTML: HyperText Markup Language | MDN】 */
+/* https://developer.mozilla.org/ja/docs/Web/HTML/Element/table */
+table,
+td {
+    margin-left: 5px;
+    border: 1px solid #333;
+}
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
 #left {
     height: 100%;
 }

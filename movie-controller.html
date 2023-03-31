@@ -11,15 +11,40 @@
     <div id='right'>
       <p>速度 : <span id='speed'></span></p>
       <p>音量 : <span id='volume'></span></p>
-      <ul>
-	<li>F : 全画面</li>
-	<li>L/J : +-10秒</li>
-	<li>K/delete : 一時停止</li>
-	<li>↑↓ : +-音量</li>
-	<li>>< : +-速度</li>
-	<!-- <li>t : 時刻を記録</li> -->
-	<!-- <li>r : tの時刻に移動</li> -->
-      </ul>
+      <table>
+	<thead>
+          <tr>
+            <th>キー</th>
+            <th>動作</th>
+          </tr>
+	</thead>
+	<tbody>
+          <tr>
+            <td>F</td>
+            <td>全画面</td>
+          </tr>
+          <tr>
+            <td>K/delete</td>
+            <td>一時停止</td>
+          </tr>
+          <tr>
+            <td>L/J</td>
+            <td>+-10秒</td>
+          </tr>
+          <tr>
+            <td>↑/↓</td>
+            <td>+-音量</td>
+          </tr>
+          <tr>
+            <td>>/<</td>
+            <td>+-速度</td>
+          </tr>
+          <tr>
+            <td>0~9</td>
+            <td>時刻移動</td>
+          </tr>
+	</tbody>
+      </table>
       <img id='hyoko' src="./img/hyoko.png" alt="ひょこ画像" />
       <textarea id='copy'></textarea>
     </div>
