@@ -81,46 +81,53 @@ window.onload = function() {
   // keydownだと⌘Lのような修飾キーを利用したキー入力に反応するのでkeypressを利用
   document.addEventListener('keypress', (event) => {
     switch (event.code) {
-    case 'KeyE': // 削除用のコマンドをコピー
-      copy(`rm /Volumes/GoogleDrive/My\\ Drive/air/movie-controller/${filePath.substr(0, 10)}`);
-      break;
 
-    case 'KeyT': // 時刻をtempに記録
-      localStorage.setItem('temp', video.currentTime);
-      alert(`rキーで${Math.round(video.currentTime)}秒に戻ります`);
-      console.log(`keypress : ${event.code}`);
-      break;
-    case 'KeyR': // 時刻をtempに移動
-      video.currentTime = localStorage.getItem('temp');
-      break;
-
-    case 'KeyA': // 時刻移動系
+    case 'KeyQ': // 時刻移動系
       video.currentTime = video.currentTime - 60;
       break;
-    case 'KeyS':
-      video.currentTime = video.currentTime - 10;
+    case 'KeyW':
+      video.currentTime = video.currentTime - 30;
       break;
-    case 'KeyD':
+    case 'KeyE':
+      video.currentTime = video.currentTime - 15;
+      break;
+    case 'KeyR':
       video.currentTime = video.currentTime - 3;
       break;
-    case 'KeyF':
+    case 'KeyT':
       video.currentTime = video.currentTime - 1;
       break;
-    case 'KeyJ':
+    case 'KeyY':
       video.currentTime = video.currentTime + 1;
       break;
-    case 'KeyK':
+    case 'KeyU':
       video.currentTime = video.currentTime + 3;
       break;
-    case 'KeyL':
-      video.currentTime = video.currentTime + 10;
+    case 'KeyI':
+      video.currentTime = video.currentTime + 15;
       break;
-    case 'Semicolon':
+    case 'KeyO':
+      video.currentTime = video.currentTime + 30;
+      break;
+    case 'KeyP':
       video.currentTime = video.currentTime + 60;
       break;
       // 十字キーの→←は15秒+-する（video要素の機能）
 
-    case 'KeyZ': // 全画面
+    case 'KeyA': // 時刻をtempに記録
+      localStorage.setItem('temp', video.currentTime);
+      alert(`sキーで${Math.round(video.currentTime)}秒に戻ります`);
+      console.log(`keypress : ${event.code}`);
+      break;
+    case 'KeyS': // 時刻をtempに移動
+      video.currentTime = localStorage.getItem('temp');
+      break;
+
+    case 'KeyD': // 削除用のコマンドをコピー
+      copy(`rm /Volumes/GoogleDrive/My\\ Drive/air/movie-controller/${filePath.substr(0, 10)}`);
+      break;
+
+    case 'KeyF': // 全画面
       if (!!video.requestFullScreen) {
 	video.requestFullScreen();
       } else if (!!video.webkitRequestFullScreen) {
@@ -132,6 +139,14 @@ window.onload = function() {
       }else if (!!video.msRequestFullscreen) {
 	video.msRequestFullscreen();
       }
+      break;
+
+    case 'KeyJ':
+      video.currentTime = video.currentTime - 10;
+      break;
+      // Kは一時停止
+    case 'KeyL':
+      video.currentTime = video.currentTime + 10;
       break;
 
     case 'KeyC': // ファイルの先頭9文字をコピー
@@ -153,6 +168,7 @@ window.onload = function() {
     // 一時停止
     case 'Backspace':
     case 'Space':
+    case 'KeyK':
       // SpaceやEnterはvideo要素本来の機能と衝突する
       if (isPlaying === true)
 	video.pause();
