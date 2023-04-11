@@ -4,7 +4,7 @@ let resumeKey = 'before_initialization';
 let resumeKeyVolume = 'before_initialization';
 let resumeKeyPlaybackRate = 'before_initialization';
 
-function save(name) {
+function save() {
   const video = document.getElementById('video');
   if (video.currentTime !== 0)
     localStorage.setItem(resumeKey, video.currentTime);
@@ -115,13 +115,9 @@ window.onload = function() {
       break;
       // 十字キーの→←は15秒+-する（video要素の機能）
 
-    case 'KeyA': // 時刻をtempに記録
-      localStorage.setItem('temp', video.currentTime);
-      alert(`sキーで${Math.round(video.currentTime)}秒に戻ります`);
-      console.log(`keypress : ${event.code}`);
-      break;
-    case 'KeyS': // 時刻をtempに移動
-      video.currentTime = localStorage.getItem('temp');
+    case 'KeyS':
+      save();
+      alert('saved');
       break;
 
     case 'KeyD': // 削除用のコマンドをコピー
@@ -140,6 +136,15 @@ window.onload = function() {
       }else if (!!video.msRequestFullscreen) {
 	video.msRequestFullscreen();
       }
+      break;
+
+    case 'KeyG': // 時刻をtempに記録
+      localStorage.setItem('temp', video.currentTime);
+      alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
+      console.log(`keypress : ${event.code}`);
+      break;
+    case 'KeyH': // 時刻をtempに移動
+      video.currentTime = localStorage.getItem('temp');
       break;
 
     case 'KeyJ':
