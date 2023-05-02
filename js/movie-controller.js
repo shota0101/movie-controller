@@ -64,7 +64,7 @@ window.onload = function() {
     video.volume = resumeVolume;
   displayVolume(video);
   
-  video.playbackRate = 1.25; // 再生スピードの初期化
+  // video.playbackRate = 1.25; // 再生スピードの初期化
   resumeKeyPlaybackRate = `${resumeKey}_playbackRate`;
   const resumePlaybackRate = localStorage.getItem(resumeKeyPlaybackRate);
   if (resumePlaybackRate !== null)
