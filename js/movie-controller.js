@@ -160,14 +160,15 @@ window.onload = function() {
       break;
 
     default:
-      
-      if (event.code.indexOf(prefixDigit) === 0) {
-	// 動画の 0～90% の位置に移動
-	const number = parseInt(event.code.replace(prefixDigit, ''));
-	video.currentTime = video.duration * number * 0.1;
-      } else {
-	console.log(`keypress : ${event.code}`);
-      }
+
+      // ⌘+数字の操作のときに誤作動が起きるので⌘キーの判定を入れるまで無効化
+      // if (event.code.indexOf(prefixDigit) === 0) {
+      // 	// 動画の 0～90% の位置に移動
+      // 	const number = parseInt(event.code.replace(prefixDigit, ''));
+      // 	video.currentTime = video.duration * number * 0.1;
+      // } else {
+      // 	console.log(`keypress : ${event.code}`);
+      // }
 
       break;
     };
