@@ -3,6 +3,9 @@
 findResult="${HOME}/program-temp/series-movie.txt"
 next='next.txt'
 
+# TODO: ディレクトリ多すぎる問題
+# emacsclient $findResult
+less $findResult
 directory=`cat $findResult | peco`
 
 if [ "$(find $findResult -mmin -10 | wc -l)" -eq 0 ]; then
