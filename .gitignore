@@ -1,7 +1,10 @@
 .DS_Store
+*.mp3
 *.mp4
 *.mov
+*.ignore
 *.check
 temp.txt
 next.txt
 stage.txt
+s/*
