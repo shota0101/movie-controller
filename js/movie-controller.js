@@ -213,6 +213,14 @@ window.onload = function() {
       video.playbackRate+=0.25;
       onPlaybackRateChanged(video);
       break;
+    case 'BracketLeft':
+      video.playbackRate-=0.01;
+      onPlaybackRateChanged(video);
+      break;
+    case 'BracketRight':
+      video.playbackRate+=0.01;
+      onPlaybackRateChanged(video);
+      break;
 
     default:
       console.log(`keydown : ${event.code}`);
