@@ -121,7 +121,7 @@ window.onload = function() {
       break;
 
     case 'KeyD': // 削除用のコマンドをコピー
-      copy(`rm /Volumes/GoogleDrive/My\\ Drive/air/movie-controller/${filePath.substr(0, 20)}`);
+      copy(`rm /Volumes/GoogleDrive/My\\ Drive/c/${filePath.substr(0, 20)}`);
       break;
 
     case 'KeyF': // 全画面
