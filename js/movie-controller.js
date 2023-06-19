@@ -93,9 +93,11 @@ window.onload = function() {
       video.currentTime = video.currentTime - 15;
       break;
     case 'KeyR':
+    case 'KeyN':
       video.currentTime = video.currentTime - 3;
       break;
     case 'KeyT':
+    case 'KeyM':
       video.currentTime = video.currentTime - 1;
       break;
     case 'KeyY':
