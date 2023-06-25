@@ -157,6 +157,11 @@ window.onload = function() {
       video.currentTime = video.currentTime + 10;
       break;
 
+    case 'KeyX':
+      document.getElementsByTagName('body')[0].setAttribute('bgcolor', 'black');
+      document.getElementById('right').setAttribute('hidden', 'true');
+      break;
+
     case 'KeyC': // ファイルの先頭9文字をコピー
       copy(filePath.substr(0, 9));
       break;
