@@ -174,6 +174,10 @@ window.onload = function() {
       copy(filePath.substr(0, 9));
       break;
 
+    case 'KeyV':
+      video.requestPictureInPicture();
+      break;
+
     default:
 
       // ⌘+数字の操作のときに誤作動が起きるので⌘キーの判定を入れるまで無効化
