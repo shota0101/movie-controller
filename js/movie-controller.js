@@ -140,13 +140,21 @@ window.onload = function() {
       }
       break;
 
-    case 'KeyG': // 時刻をtempに記録
-      localStorage.setItem('temp', video.currentTime);
+    case 'KeyG': // 時刻を一時的に記録
+      localStorage.setItem('recordTime', video.currentTime);
       alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
       console.log(`keypress : ${event.code}`);
       break;
     case 'KeyH': // 時刻をtempに移動
-      video.currentTime = localStorage.getItem('temp');
+      const recordTime = localStorage.getItem('recordTime');
+      if (recordTime === null) {
+	alert('recordTimeがnullです');
+      } else {
+	// 現在時刻と記録した時刻を入れ替えつつ、記録した時間に移動
+	const currentTime = video.currentTime;
+	video.currentTime = recordTime;
+	localStorage.setItem('recordTime', currentTime);
+      }
       break;
 
     case 'KeyJ':
