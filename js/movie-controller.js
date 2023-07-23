@@ -148,7 +148,6 @@ window.onload = function() {
     case 'KeyG': // 時刻を一時的に記録
       localStorage.setItem('recordTime', video.currentTime);
       alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
-      console.log(`keypress : ${event.code}`);
       break;
     case 'KeyH': // 時刻をrecordTimeに移動
       const recordTime = localStorage.getItem('recordTime');
