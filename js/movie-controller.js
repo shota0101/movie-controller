@@ -145,7 +145,7 @@ window.onload = function() {
       alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
       console.log(`keypress : ${event.code}`);
       break;
-    case 'KeyH': // 時刻をtempに移動
+    case 'KeyH': // 時刻をrecordTimeに移動
       const recordTime = localStorage.getItem('recordTime');
       if (recordTime === null) {
 	alert('recordTimeがnullです');
