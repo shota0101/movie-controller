@@ -140,6 +140,11 @@ window.onload = function() {
       }
       break;
 
+    case 'KeyA': // 時刻を一時的に記録しつつ最初に移動
+      localStorage.setItem('recordTime', video.currentTime);
+      alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
+      video.currentTime = 0;
+      break;
     case 'KeyG': // 時刻を一時的に記録
       localStorage.setItem('recordTime', video.currentTime);
       alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
