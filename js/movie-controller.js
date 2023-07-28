@@ -176,8 +176,8 @@ window.onload = function() {
       document.getElementById('right').setAttribute('hidden', 'true');
       break;
 
-    case 'KeyC': // ファイルの先頭9文字をコピー
-      copy(filePath.substr(0, 9));
+    case 'KeyC':
+      copy(fileName);
       break;
 
     case 'KeyV':
