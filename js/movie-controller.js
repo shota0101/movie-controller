@@ -147,6 +147,11 @@ window.onload = function() {
       alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
       video.currentTime = 0;
       break;
+    case 'KeyZ': // 時刻を一時的に記録しつつ最後に移動
+      localStorage.setItem('recordTime', video.currentTime);
+      alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
+      video.currentTime = video.duration;
+      break;
     case 'KeyG': // 時刻を一時的に記録
       localStorage.setItem('recordTime', video.currentTime);
       alert(`hキーで${Math.round(video.currentTime)}秒に戻ります`);
