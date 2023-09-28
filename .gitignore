@@ -1,5 +1,4 @@
 .DS_Store
-m/movie-controller-local-list.txt
 *.mp3
 *.mp4
 *.mov
@@ -8,4 +7,4 @@ m/movie-controller-local-list.txt
 temp.txt
 next.txt
 stage.txt
-s/*
+m/*
