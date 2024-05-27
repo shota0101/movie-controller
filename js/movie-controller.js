@@ -35,7 +35,9 @@ function onPlaybackRateChanged(video) {
 
 window.onload = function() {
   // ファイルパスを取得
-  const filePath = new URLSearchParams(window.location.search.substring(1)).get('p');
+  const url = new URL(window.location.href);
+  const params = url.searchParams;
+  const filePath = params.get('p');
   
   const filePathArray = filePath.split('/');
   const fileName = filePathArray[filePathArray.length - 1];
