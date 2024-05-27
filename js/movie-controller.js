@@ -33,6 +33,20 @@ function onPlaybackRateChanged(video) {
   localStorage.setItem(resumeKeyPlaybackRate, video.playbackRate);
 }
 
+function fullScreen(video) {
+  if (!!video.requestFullScreen) {
+    video.requestFullScreen();
+  } else if (!!video.webkitRequestFullScreen) {
+    video.webkitRequestFullScreen();
+  } else if (!!video.webkitEnterFullscreen) {
+    video.webkitEnterFullscreen();
+  }else if (!!video.mozRequestFullScreen) {
+    video.mozRequestFullScreen();
+  }else if (!!video.msRequestFullscreen) {
+    video.msRequestFullscreen();
+  }
+}
+
 window.onload = function() {
   // ファイルパスを取得
   const url = new URL(window.location.href);
@@ -131,17 +145,7 @@ window.onload = function() {
       break;
 
     case 'KeyF': // 全画面
-      if (!!video.requestFullScreen) {
-	video.requestFullScreen();
-      } else if (!!video.webkitRequestFullScreen) {
-	video.webkitRequestFullScreen();
-      } else if (!!video.webkitEnterFullscreen) {
-	video.webkitEnterFullscreen();
-      }else if (!!video.mozRequestFullScreen) {
-	video.mozRequestFullScreen();
-      }else if (!!video.msRequestFullscreen) {
-	video.msRequestFullscreen();
-      }
+      fullScreen(video);
       break;
 
     case 'KeyA': // 時刻を一時的に記録しつつ最初に移動
