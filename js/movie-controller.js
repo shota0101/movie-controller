@@ -256,6 +256,12 @@ window.onload = function() {
       onPlaybackRateChanged(video);
       break;
 
+    case 'Digit0':
+      video.currentTime = 0;
+      video.play();
+      fullScreen(video);
+      break;
+
     default:
       console.log(`keydown : ${event.code}`);
       break;
