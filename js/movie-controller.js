@@ -75,7 +75,7 @@ window.onload = function() {
     video.currentTime = localStorage.getItem(resumeKey);
   window.setInterval(save, 1000 * 3); // 3秒ごとに保存
   
-  video.volume = 0.5; // 音量の初期化
+  video.volume = 1; // 音量の初期化
   resumeKeyVolume = `${resumeKey}_volume`;
   const resumeVolume = localStorage.getItem(resumeKeyVolume);
   if (resumeVolume !== null)
